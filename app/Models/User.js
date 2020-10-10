@@ -19,6 +19,8 @@ class User extends Model {
         userInstance.password = await Hash.make(userInstance.password)
       }
     })
+
+    
   }
 
   /**
@@ -33,6 +35,10 @@ class User extends Model {
    */
   tokens () {
     return this.hasMany('App/Models/Token')
+  }
+
+  pontoDeColeta () {
+    return this.hasMany('App/Models/PontoDeColeta')
   }
 }
 
