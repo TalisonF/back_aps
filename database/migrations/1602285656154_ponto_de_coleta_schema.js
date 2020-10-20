@@ -17,6 +17,7 @@ class PontoDeColetaSchema extends Schema {
       table.string("nome")
       table.string("lat")
       table.string("long")
+      table.string("materiais")
       table.timestamps()
     })
   }
