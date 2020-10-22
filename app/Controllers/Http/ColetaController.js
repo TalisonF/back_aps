@@ -18,7 +18,7 @@ class ColetaController {
 
     async store({ request, auth }) {
         const { id } = auth.user
-        const data = request.only(["nome", "lat", "long"])
+        const data = request.only(["nome", "lat", "long", "materiais"])
 
         const pontoDeColeta = await PontoDeColeta.create({ ...data, user_id: id })
 
@@ -33,7 +33,7 @@ class ColetaController {
           return response.status(401).send({ error: 'Not authorized' })
         }
         
-        const data = request.only(["nome", "lat", "long"])
+        const data = request.only(["nome", "lat", "long", "materias"])
       
         pontoDeColeta.merge(data)
       
