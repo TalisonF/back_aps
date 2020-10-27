@@ -8,7 +8,7 @@ class SessionController {
     const token = await auth.attempt(email, password)
     const user = await User.findBy('email', email)
     
-    return {...token, username: user.username}
+    return {...token, username: user.username, idUser: user.id}
   }
 }
 
